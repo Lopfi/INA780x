@@ -1,0 +1,24 @@
+# Class
+INA780x     KEYWORD1
+
+# Methods
+begin       KEYWORD2
+isConnected KEYWORD2
+reset       KEYWORD2
+readRegister    KEYWORD2
+writeRegister   KEYWORD2
+getBusVoltage   KEYWORD2
+getShuntVoltage KEYWORD2
+getCurrent      KEYWORD2
+getPower        KEYWORD2
+getTemperature  KEYWORD2
+setADCConfig    KEYWORD2
+setAlertLimit   KEYWORD2
+getCharge       KEYWORD2
+getDiagAlert    KEYWORD2
+getCurrentUnderLimit    KEYWORD2
+getBusOverVoltageLimit  KEYWORD2
+getBusUnderVoltageLimit KEYWORD2
+getTemperatureLimit     KEYWORD2
+getPowerLimit   KEYWORD2
+getManufacturerID   KEYWORD2

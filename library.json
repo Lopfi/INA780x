@@ -1,0 +1,19 @@
+{
+  "name": "INA780x",
+  "version": "1.0.0",
+  "description": "Library for communicating with the INA780X family of power monitor ics over I2C.",
+  "keywords": "i2c, sensor, power monitor, INA780B, INA780x, INA780",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/INA780X.git"
+  },
+  "authors": [
+    {
+      "name": "Robin Dorst",
+      "email": "robin@rdorst.tech"
+    }
+  ],
+  "license": "MIT",
+  "frameworks": "arduino",
+  "platforms": "*"
+}
