@@ -1,4 +1,4 @@
-#include "ina780x.h"
+#include "INA780x.h"
 
 INA780x::INA780x(uint8_t address) {
     _address = address;

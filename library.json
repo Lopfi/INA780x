@@ -1,6 +1,6 @@
 {
   "name": "INA780x",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library for communicating with the INA780X family of power monitor ics over I2C.",
   "keywords": "i2c, sensor, power monitor, INA780B, INA780x, INA780",
   "repository": {
