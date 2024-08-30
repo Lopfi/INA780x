@@ -53,7 +53,7 @@ private:
     static const uint8_t CONFIG_REG = 0x00;
     static const uint8_t ADC_CONFIG_REG = 0x01;
     static const uint8_t VBUS_REG = 0x05;
-    static const uint8_t DIETEMP_REG = 0x0A;
+    static const uint8_t DIETEMP_REG = 0x06;
     static const uint8_t CURRENT_REG = 0x07;
     static const uint8_t POWER_REG = 0x08;
     static const uint8_t ENERGY_REG = 0x09;
