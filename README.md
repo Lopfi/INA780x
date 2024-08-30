@@ -17,7 +17,7 @@ The INA780x Arduino Library provides an interface to communicate with the Texas 
 
 ### Arduino IDE
 
-1. Download the latest release of the library from the [GitHub repository](https://github.com/yourusername/INA780x).
+1. Download the latest release of the library from the [GitHub repository](https://github.com/lopfi/INA780x).
 2. Open the Arduino IDE.
 3. Go to `Sketch` > `Include Library` > `Add .ZIP Library...`.
 4. Select the downloaded `.zip` file to install the library.
@@ -26,7 +26,7 @@ The INA780x Arduino Library provides an interface to communicate with the Texas 
 
 1. Add the following dependency to your `platformio.ini` file:
    ```ini
-   lib_deps = https://github.com/yourusername/INA780x.git
+   lib_deps = https://github.com/lopfi/INA780x.git
    ```
 2. Build your project to automatically download and install the library.
 
