@@ -13,6 +13,7 @@ public:
     void reset();
     
     // Register read/write functions
+    int16_t readRegisterSigned(uint8_t reg);
     uint16_t readRegister(uint8_t reg);
     uint64_t readRegister(uint8_t reg, uint8_t length);
     void writeRegister(uint8_t reg, uint16_t value);

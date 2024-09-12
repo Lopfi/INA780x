@@ -17,6 +17,17 @@ void INA780x::reset() {
     writeRegister(CONFIG_REG, 0x8000); // Set the reset bit
 }
 
+int16_t INA780x::readRegisterSigned(uint8_t reg) {
+    Wire.beginTransmission(_address);
+    Wire.write(reg);
+    Wire.endTransmission();
+    
+    Wire.requestFrom(_address, (uint8_t)2);
+    int16_t value = (Wire.read() << 8) | Wire.read();
+
+    return value;
+}
+
 uint16_t INA780x::readRegister(uint8_t reg) {
     Wire.beginTransmission(_address);
     Wire.write(reg);
@@ -56,7 +67,7 @@ float INA780x::getBusVoltage() {
 }
 
 float INA780x::getCurrent() {
-    uint16_t rawValue = readRegister(CURRENT_REG);
+    int16_t rawValue = readRegisterSigned(CURRENT_REG);
     return rawValue * 0.0024; // Conversion factor for current
 }
 
