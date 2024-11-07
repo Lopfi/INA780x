@@ -5,7 +5,7 @@ INA780x::INA780x(uint8_t address) {
 }
 
 void INA780x::begin() {
-    Wire.begin();
+    Wire.begin(8, 9); // SDA on pin 8, SCL on pin 9
 }
 
 bool INA780x::isConnected() {
