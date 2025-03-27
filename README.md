@@ -17,12 +17,20 @@ The INA780x Arduino Library provides an interface to communicate with the Texas 
 
 ### Arduino IDE
 
+Using the build in library browser.
+
+OR
+
 1. Download the latest release of the library from the [GitHub repository](https://github.com/lopfi/INA780x).
 2. Open the Arduino IDE.
 3. Go to `Sketch` > `Include Library` > `Add .ZIP Library...`.
 4. Select the downloaded `.zip` file to install the library.
 
 ### PlatformIO
+
+Using the build in library browser.
+
+OR
 
 1. Add the following dependency to your `platformio.ini` file:
    ```ini
@@ -34,60 +42,59 @@ The INA780x Arduino Library provides an interface to communicate with the Texas 
 
 ### Basic Example
 
-    ```cpp
+```cpp
 
-    #include <Wire.h>
-    #include "INA780x.h"
+ #include <Wire.h>
+ #include "INA780x.h"
 
-    INA780x powerMonitor(0x40); // Replace 0x40 with the correct I2C address
+ INA780x powerMonitor(0x40); // Replace 0x40 with the correct I2C address
 
-    void setup() {
-    Serial.begin(9600);
-    powerMonitor.begin();
+ void setup() {
+ Serial.begin(9600);
+ powerMonitor.begin();
 
-        if (powerMonitor.isConnected()) {
-            Serial.println("INA780x found and connected!");
-        } else {
-            Serial.println("INA780x not found!");
-            while (1); // Halt the program if the chip is not found
-        }
+     if (powerMonitor.isConnected()) {
+         Serial.println("INA780x found and connected!");
+     } else {
+         Serial.println("INA780x not found!");
+         while (1); // Halt the program if the chip is not found
+     }
 
-        powerMonitor.reset();
+     powerMonitor.reset();
 
-        // Configure ADC (example configuration)
-        powerMonitor.setADCConfig(0x4120);
+     // Configure ADC (example configuration)
+     powerMonitor.setADCConfig(0x4120);
 
-    }
+ }
 
-    void loop() {
-        float busVoltage = powerMonitor.getBusVoltage();
-        float shuntVoltage = powerMonitor.getShuntVoltage();
-        float current = powerMonitor.getCurrent();
-        float power = powerMonitor.getPower();
-        float temperature = powerMonitor.getTemperature();
-        uint16_t charge = powerMonitor.getCharge();
-        uint16_t diagAlert = powerMonitor.getDiagAlert();
+ void loop() {
+     float busVoltage = powerMonitor.getBusVoltage();
+     float shuntVoltage = powerMonitor.getShuntVoltage();
+     float current = powerMonitor.getCurrent();
+     float power = powerMonitor.getPower();
+     float temperature = powerMonitor.getTemperature();
+     uint16_t charge = powerMonitor.getCharge();
+     uint16_t diagAlert = powerMonitor.getDiagAlert();
 
-        Serial.print("Bus Voltage: ");
-        Serial.println(busVoltage);
-        Serial.print("Shunt Voltage: ");
-        Serial.println(shuntVoltage);
-        Serial.print("Current: ");
-        Serial.println(current);
-        Serial.print("Power: ");
-        Serial.println(power);
-        Serial.print("Temperature: ");
-        Serial.println(temperature);
-        Serial.print("Charge: ");
-        Serial.println(charge);
-        Serial.print("Diagnostic Alerts: ");
-        Serial.println(diagAlert, HEX);
+     Serial.print("Bus Voltage: ");
+     Serial.println(busVoltage);
+     Serial.print("Shunt Voltage: ");
+     Serial.println(shuntVoltage);
+     Serial.print("Current: ");
+     Serial.println(current);
+     Serial.print("Power: ");
+     Serial.println(power);
+     Serial.print("Temperature: ");
+     Serial.println(temperature);
+     Serial.print("Charge: ");
+     Serial.println(charge);
+     Serial.print("Diagnostic Alerts: ");
+     Serial.println(diagAlert, HEX);
 
-        delay(1000);
+     delay(1000);
 
-    }
-
-    ```
+ }
+```
 
 ## API Reference
 
